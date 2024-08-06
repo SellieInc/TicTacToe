@@ -15,3 +15,13 @@
 .new-game{
     width: 100%;
 }
+
+.board-container {
+    position: relative;
+  }
+  
+  .board-container.disabled {
+    pointer-events: none; /* Disable clicking */
+    opacity: 0.5; /* Make it look disabled */
+  }
+  

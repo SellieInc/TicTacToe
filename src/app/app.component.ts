@@ -10,9 +10,7 @@ export class AppComponent {
   title = 'tic-tac';
 
   constructor(private router: Router) {
-  }
-  playGame(){
-    this.router.navigateByUrl('/game');
+    this.router.navigateByUrl('/');
   }
 }
 

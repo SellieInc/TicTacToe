@@ -3,9 +3,19 @@
 		<h1>TIC TAC TOE</h1>
 		<h1>TIC TAC TOE</h1>
 	</div>
-		<p>Press Play to play now</p>
-        <div>
-            <button routerLink="game">Play Now</button>
-        </div>
+	<p>Press Play to play now</p>
+	<div>
+		<button pButton (click)="openDialog()" class="">Play Now</button>
+	</div>
 </div>
 
+<p-dialog [(visible)]="isOpen" [responsive]="true" [style]="{'width': '30vw'}" [showHeader]="false">
+	<p>Choose an Option</p>
+	<div class="flex">
+		<button pButton type="button" label="Player vs Player" (click)="selectOption('pvp')"></button>
+		<button pButton type="button" label="Player vs AI" (click)="selectOption('pva')"></button>
+	</div>
+	<p-footer>
+		<button class="confirm" pButton type="button" label="Close" (click)="close()"></button>
+	  </p-footer>
+</p-dialog>
