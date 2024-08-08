@@ -15,9 +15,10 @@ export class BoardComponent implements OnInit {
   private isGameOver!: boolean;
   public statusMessage!: string;
   private isBotMode: boolean = false; 
+  botTurn : boolean = false;
 
-
-  constructor(private gameStateService: GameStateService) {}
+  constructor(public gameStateService: GameStateService) {
+}
 
   ngOnInit(): void {
     this.isBotMode = this.gameStateService.isBotMode;
@@ -49,13 +50,14 @@ export class BoardComponent implements OnInit {
         this.isGameOver = true;
       } else if (this.isWin()) {
         this.statusMessage = `Player ${this.currentPlayer} won`;
+        this.gameStateService.incWins(this.currentPlayer)
         this.isGameOver = true;
       } else {
         this.currentPlayer = this.currentPlayer === CellEnum.X ? CellEnum.O : CellEnum.X;
         if (this.isBotMode && this.currentPlayer === CellEnum.O) {
-          this.gameStateService.isBotTurn = true;
+          this.botTurn = true;
           this.statusMessage = `Player ${this.currentPlayer}'s turn`;
-          setTimeout(() => this.botMove(), 1000); // Delay of 1000 ms
+          setTimeout(() => this.botMove(), 1000); 
         }
       }
     }
@@ -127,7 +129,7 @@ export class BoardComponent implements OnInit {
         this.move(row, col);
       }
     }
-    this.gameStateService.isBotTurn = false;
+    this.botTurn = false;
     this.statusMessage = `Player ${this.currentPlayer}'s turn`;
   }
   

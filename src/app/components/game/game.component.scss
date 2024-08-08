@@ -1,6 +1,9 @@
-.main-app{
+.main-app {
     margin: 0 auto;
-    max-width: 300px;
     color: #34495e;
     background-color: white;
-    }
+    background-image: url('./../../../assets/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}

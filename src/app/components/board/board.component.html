@@ -1,14 +1,21 @@
-<div>
-    <div class="status text-center p-4">
-        {{ statusMessage }}
-    </div>
+<div class="container" [ngClass]="{'block-play': botTurn}">
+  <div class="board-container">
     <div class="board" *ngFor="let row of [0,1,2]">
-        <app-block *ngFor="let col of [0,1,2]" [row]="row" [col]="col" [piece]="board[row][col]"
-            (click)="move(row,col)">
-        </app-block>
+      <app-block *ngFor="let col of [0,1,2]" [row]="row" [col]="col" [piece]="board[row][col]"
+        (click)="move(row,col)">
+      </app-block>
     </div>
     <div class="pt-2"></div>
     <button *ngIf="gameOver" (click)="newGame()" class="btn btn-primary new-game">
-        New Game
+      New Game
     </button>
+
+    <div class="status-container">
+      <div class="status text-center p-4">
+        {{ statusMessage }}
+        <span>X-wins: {{ gameStateService.xWins$ | async }}</span>
+        <span>O-wins: {{ gameStateService.oWins$ | async }}</span>
+      </div>
+    </div>
+  </div>
 </div>

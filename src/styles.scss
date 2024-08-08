@@ -1,36 +1,32 @@
-/* src/styles.scss */
-
-/* Dialog Styles */
 .ui-dialog {
-    background: #f0f0f0; /* Light grey background for the dialog */
-    border: 1px solid #d3d3d3; /* Light grey border */
+    background: #f0f0f0; 
+    border: 1px solid #d3d3d3; 
   }
   
   .ui-dialog .ui-dialog-titlebar {
-    background: #e0e0e0; /* Slightly darker grey for the title bar */
-    border-bottom: 1px solid #d3d3d3; /* Border separating title bar from content */
+    background: #e0e0e0; 
+    border-bottom: 1px solid #d3d3d3; 
   }
   
   .ui-dialog .ui-dialog-titlebar-close {
-    color: #666; /* Grey color for the close icon */
+    color: #666; 
   }
   
-  /* Button Styles */
   .ui-button {
-    background-color: #d3d3d3; /* Grey background for buttons */
-    border: none; /* Remove button border */
-    color: #333; /* Dark grey text color */
+    background-color: #d3d3d3;
+    border: none; 
+    color: #333; 
   }
   
   .ui-button:hover {
-    background-color: #bfbfbf; /* Slightly darker grey on hover */
+    background-color: #bfbfbf; 
   }
   
   .ui-button:active {
-    background-color: #a9a9a9; /* Even darker grey on click */
+    background-color: #a9a9a9; 
   }
   
   .ui-button.ui-button-secondary {
-    background-color: #c0c0c0; /* Different grey for secondary buttons */
+    background-color: #c0c0c0; 
   }
   
