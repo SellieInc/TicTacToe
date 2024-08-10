@@ -82,9 +82,6 @@ p {
 	}
 }
 
-/* src/app/components/menu/menu.component.scss */
-
-/* Custom Styles for Dialog */
 :host ::ng-deep .p-dialog {
 	background: #f0f0f0;
 	border: 1px solid #d3d3d3;
@@ -127,4 +124,14 @@ p {
 
 .confirm {
 	top: 12px
+}
+
+p-dialog {
+	width: 30vw;
+}
+
+@media (max-width: 768px) {
+	p-dialog {
+		width: 80vw !important;
+	}
 }

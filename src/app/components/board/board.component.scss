@@ -11,7 +11,6 @@
   opacity: 80%;
   background-color: white;
   position: relative;
-  margin-left: 37rem;
 }
 
 .board {
@@ -51,4 +50,45 @@
 
 .block-play .board {
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .board-container {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .board {
+    justify-content: center;
+  }
+
+  .status-container {
+    width: 100%;
+    max-width: 300px;
+    position: static;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .status {
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-container {
+    padding: 8px;
+  }
+
+  .status {
+    font-size: 1em;
+  }
 }
